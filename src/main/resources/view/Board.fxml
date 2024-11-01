@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane fx:id="root" prefHeight="653.0" prefWidth="680.0" style="-fx-background-color: white;" styleClass="pane" stylesheets="@../style/Board.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.oopcoursework.controller.BoardController">
+   <children>
+      <Group layoutX="40.0" layoutY="16.0">
+         <children>
+            <ImageView fitHeight="131.0" fitWidth="180.0" layoutX="12.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/iconstictactoe-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <Group layoutX="97.0" layoutY="5.0">
+               <children>
+                  <TextFlow layoutX="110.0" layoutY="14.0" prefHeight="32.0" prefWidth="266.0" styleClass="title">
+                     <children>
+                        <Text fill="#ffff7b" strokeType="OUTSIDE" strokeWidth="0.0" text="TIC" />
+                        <Text fill="#74e8ff" strokeType="OUTSIDE" strokeWidth="0.0" text="TAC" />
+                        <Text fill="#eb718b" strokeType="OUTSIDE" strokeWidth="0.0" text="TOE" />
+                     </children>
+                  </TextFlow>
+               </children>
+            </Group>
+            <Label layoutX="235.0" layoutY="64.0" prefHeight="17.0" prefWidth="128.0" text="Tic Tac Toe Game" />
+         </children>
+      </Group>
+      <Label fx:id="lblStatus" alignment="CENTER" layoutX="60.0" layoutY="129.0" prefHeight="38.0" prefWidth="600.0" text="LET'S PLAY !" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Pane fx:id="pneOver" layoutX="39.0" layoutY="167.0" prefHeight="440.0" prefWidth="600.0" styleClass="overlay-pane" visible="false">
+         <children>
+            <JFXButton fx:id="btnPlayAgain" layoutX="227.0" layoutY="201.0" onAction="#btnPlayAgainOnAction" styleClass="play-again-button" text="PLAY AGAIN" />
+         </children>
+      </Pane>
+      <GridPane fx:id="gridBoard" hgap="10" layoutX="180.0" layoutY="200.0" prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: white;" vgap="10">
+         <children>
+            <JFXButton fx:id="btn00" onAction="#handleButtonClick" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #fecdea;" styleClass="game-button" text="" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <JFXButton fx:id="btn01" onAction="#handleButtonClick" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #fecdea;" styleClass="game-button" text="" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <JFXButton fx:id="btn02" onAction="#handleButtonClick" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #fecdea;" styleClass="game-button" text="" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <JFXButton fx:id="btn10" onAction="#handleButtonClick" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #fecdea;" styleClass="game-button" text="" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <JFXButton fx:id="btn11" onAction="#handleButtonClick" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #fecdea;" styleClass="game-button" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <JFXButton fx:id="btn12" onAction="#handleButtonClick" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #fecdea;" styleClass="game-button" text="" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <JFXButton fx:id="btn20" onAction="#handleButtonClick" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #fecdea;" styleClass="game-button" text="" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <JFXButton fx:id="btn21" onAction="#handleButtonClick" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #fecdea;" styleClass="game-button" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <JFXButton fx:id="btn22" onAction="#handleButtonClick" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #fecdea;" styleClass="game-button" text="" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+      </GridPane>
+   </children>
+</AnchorPane>
